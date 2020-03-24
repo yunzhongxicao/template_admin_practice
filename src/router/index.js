@@ -56,6 +56,104 @@ export const constantRoutes = [
   },
 
   {
+    path: '/zhuangtai',
+    component: Layout,
+    redirect: '/zhuangtai/havedone',
+    name: 'Zhuaungtai',
+    meta: { title: '状态查询' },
+    children: [
+      {
+        path: 'havedone',
+        name: 'Havedone',
+        component: () => import('@/views/zhuangtai/havedone/index'),
+        meta: { title: '已完成订单' }
+      },
+      {
+        path: '/notdone',
+        name: 'Notdone',
+        component: () => import('@/views/zhuangtai/notdone/index'),
+        meta: { title: '未完成订单' }
+      },
+      {
+        path: '/readydone',
+        name: 'Readydone',
+        component: () => import('@/views/zhuangtai/readydone/index'),
+        meta: { title: '待生产订单' }
+      }
+    ]
+  },
+
+  {
+    path: '/dingdanfenjie',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/dingdanfenjie/index'),
+        name: 'Dingdanfenjie',
+        meta: { title: '订单分解' }
+      }
+    ]
+  },
+
+  {
+    path: '/jichuangjiagong',
+    component: Layout,
+    redirect: '/jichuangjiagong/renwu',
+    name: 'Jichuangjiagong',
+    meta: { title: '机床加工' },
+    children: [
+      {
+        path: 'jichuangzhuangtai',
+        name: 'Jichuangzhuangtai',
+        component: () => import('@/views/jichuangjiagong/jichuangzhuangtai/index'),
+        meta: { title: '机床状态查询' }
+      },
+
+      {
+        path: 'renwu',
+        name: 'Renwu',
+        component: () => import('@/views/jichuangjiagong/renwu/index'),
+        meta: { title: '加工任务分配' }
+      },
+      {
+        path: 'xinxi',
+        name: 'Xinxi',
+        component: () => import('@/views/jichuangjiagong/xinxi/index'),
+        meta: { title: '实时信息反馈' }
+      }
+    ]
+  },
+
+  {
+    path: '/wuliao',
+    component: Layout,
+    redirect: '/wuliao/chuku',
+    name: 'Wuliao',
+    meta: { title: '物料管理' },
+    children: [
+      {
+        path: 'chuku',
+        name: 'Chuku',
+        component: () => import('@/views/wuliao/chuku/index'),
+        meta: { title: '出库管理' }
+      },
+      {
+        path: 'ruku',
+        name: 'Ruku',
+        component: () => import('@/views/wuliao/ruku/index'),
+        meta: { title: '入库管理' }
+      },
+      {
+        path: 'kucun',
+        name: 'Kucun',
+        component: () => import('@/views/wuliao/kucun/index'),
+        meta: { title: '库存管理' }
+      }
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
@@ -89,7 +187,7 @@ export const constantRoutes = [
       }
     ]
   },
-
+  /*
   {
     path: '/nested',
     component: Layout,
@@ -148,6 +246,27 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/permission',
+    component: Layout,
+    redirect: '/permission/index', // 重定向地址，在面包屑中点击会重定向去的地址
+    hidden: true, // 不在侧边栏线上
+    alwaysShow: true, // 一直显示根路由
+    meta: { roles: ['admin', 'editor'] }, // 你可以在根路由设置权限，这样它下面所以的子路由都继承了这个权限
+
+    children: [{
+      path: 'index',
+      component: () => import('@/views/permission/index'),
+      name: 'permission',
+      meta: {
+        title: 'permission',
+        icon: 'lock', // 图标
+        role: ['admin', 'editor'], // 或者你可以给每一个子路由设置自己的权限
+        noCache: true // 不会被 <keep-alive> 缓存
+      }
+    }]
+  },
+*/
   {
     path: 'external-link',
     component: Layout,

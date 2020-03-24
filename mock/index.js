@@ -6,7 +6,8 @@ import table from './table'
 
 const mocks = [
   ...user,
-  ...table
+  ...table,
+
 ]
 
 // for front mock
