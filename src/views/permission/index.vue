@@ -1,6 +1,6 @@
 <template>
   <div class="permission-container">
-    <div class="permission-text">我太难了！！！！</div>
+    <div class="permission-text">！！！！</div>
   </div>
 </template>
 

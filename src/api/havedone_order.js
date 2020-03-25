@@ -1,8 +1,9 @@
 import request from '@/utils/request'
 
-export function getWord() {
+export function getHavedone() {
   return request({
-    url: '/vue-admin-template/practice1/word',
+    url: 'vue-admin-template/havedone_order',
     method: 'post'
+
   })
 }

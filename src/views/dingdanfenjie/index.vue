@@ -1,6 +1,6 @@
 <template>
   <div class="dingdanfenjie-container">
-    <div class="dingdanfenjie-text">哈哈哈哈好</div>
+    <div class="dingdanfenjie-text">好</div>
   </div>
 </template>
 
